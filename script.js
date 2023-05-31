@@ -16,14 +16,15 @@ function makeColumns(numColumns,rows){
     }
 }
 
+//calculates height of grid box
 function setRowHeight(numRows){
-    let height = container.clientHeight / numRows - (numRows * 2)
+    let height = container.clientHeight / numRows
     let rowHeight = height + "px"
     return rowHeight
 }
-
+//calculates width of grid box
 function setRowWidth(numColumns){
-    let width = (container.clientWidth / numColumns) - (numColumns * 2)
+    let width = (container.clientWidth / numColumns)
     let rowWidth = width + "px"
     return rowWidth
 }
@@ -33,16 +34,38 @@ function setRowWidth(numColumns){
 
 
 const container = document.querySelector('.container')
-let num = 3;
+let num = 64;
 makeRows(num)
 let rows = document.querySelectorAll('.row')
 makeColumns(num, rows)
 let boxes = document.querySelectorAll('.grid')
-console.log(container)
+
+
+
+//sets width and height of grid boxes
 for(let i = 0; i < num * num; i++){
     boxes[i].style.width = setRowWidth(num)
     boxes[i].style.height = setRowHeight(num)
-    boxes[i].style.flex="1 1 0"
-    // boxes[i].style.width = "100px";
-    // boxes[i].style.height = "100px";
 }
+
+
+//makes grid box change color
+boxes.forEach((box) => {box.addEventListener('mousedown', ()=>{
+    boxes.forEach((box) => {box.addEventListener('mouseover', ()=>{
+        box.style.backgroundColor = "black";
+    })
+})
+    })
+})
+
+
+let clearButton = document.querySelector('#clear')
+//makes clear button reset grid when clicked on
+clearButton.addEventListener('click', function(){
+    for(let i = 0; i < boxes.length; i++){
+        boxes[i].style.backgroundColor = "white"
+    }
+});
+
+
+ 

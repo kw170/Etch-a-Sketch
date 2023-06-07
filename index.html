@@ -12,10 +12,13 @@
     </div>
     <div class="second">
       <div class="options">
-        <img class="pick">
-        <button class="pick">Color Mode</button>
-        <button class="pick">Rainbow Mode</button>
-        <button class="pick">Eraser</button>
+        <div class="sliderContainer">
+        <input type="range" min="1" max="64" value="16" class="pick slider">
+        <p class = gridValue>16 x 16</p>
+        </div>
+        <input class="pick" id="colorPicker" type="color" value="#000000" />
+        <button class="pick" id="colorBtn">Color mode</button>
+        <button class="pick" id="eraser">Eraser</button>
         <button class="pick" id="clear">Clear</button>
       </div>
       <div class="container">

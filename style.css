@@ -18,17 +18,23 @@ body{
     flex-wrap: wrap-reverse;
     margin-top:100px;
     justify-content: center;
+    gap:70px;
 }
 
 .options{
     display:flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .pick{
-    margin: 5px 50px 10px 0px;
+    margin: 10px;
     padding:6px 12px;
+}
+#colorPicker{
+    padding:0px;
+    border-radius: 1px;
 }
 
 .container{
@@ -42,10 +48,34 @@ body{
 }
 
 .grid{
-    color: green;
     background-color: white;
 }
 
-.grid:hover{
-    background-color: antiquewhite;
+#color{
+    height:60px;
+    width:60px;
+    border: solid;
+    border-radius: 40px;
+    padding:0;
+}
+button{
+    width:120px;
+    border-radius: 4px;
+}
+
+.sliderContainer{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gridValue{
+    margin:0px 0px 12px 0px;
+}
+.slider{
+    margin: 0px;
+}
+
+.pick:hover{
+    background-color: rgb(224, 224, 224);
 }
